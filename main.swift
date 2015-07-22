@@ -10,17 +10,18 @@ func input() -> String {
 //function to export data to text file
 func outputTextFile(data: [String]) {
 	var str = ""
-	let location = "/Users/buildAI/Developer/aliensOnEarth/result.txt"
+	let txtlocation = "/Users/buildAI/Developer/aliensOnEarth/result.txt" //output text file location
 	for i in 0..<data.count {
 		str += data[i]
 	}
-	str.writeToFile(location, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+	str.writeToFile(txtlocation, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
 }
 
 //function to export data to pdf file
 func outputPDFFile(data: [String]) {
-	let location1 = "/Users/buildAI/Developer/aliensOnEarth/pdf_template.txt".stringByExpandingTildeInPath
-	var fileContent : String? = String(contentsOfFile: location1, encoding: NSUTF8StringEncoding, error: nil)
+	//pdf template location
+	let pdfTemplateLocation = "/Users/buildAI/Developer/aliensOnEarth/pdf_template.txt".stringByExpandingTildeInPath
+	var fileContent : String? = String(contentsOfFile: pdfTemplateLocation, encoding: NSUTF8StringEncoding, error: nil)
 	var pdfDictTemplate = "BT /F1 12 Tf 50 Td ()Tj ET\n"
 	let pdftemplate = fileContent!
 	var height = 750
@@ -33,8 +34,9 @@ func outputPDFFile(data: [String]) {
 		fileContent!.splice(temp,atIndex: fileContent!.rangeOfString("endstream")!.startIndex)
 		height -= 30
 	}
-    let location2 = "/Users/buildAI/Developer/aliensOnEarth/result.pdf"
-    fileContent!.writeToFile( location2, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+	//output pdf file location
+    let pdfLocation = "/Users/buildAI/Developer/aliensOnEarth/result.pdf"
+    fileContent!.writeToFile( pdfLocation, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
 }
 
 //function to call another function to export data to particular file format
