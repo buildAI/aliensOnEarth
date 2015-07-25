@@ -1,13 +1,11 @@
 # Aliens On Earth
-Console based application which can take details and generate a pdf or text file.
 
-Here in this repository the main.swift file consists of code for problem statement and the pdf_template.txt is the template for a PDF structure.
+Clone the repo into your Developer directory
 
-To run the code just download the main.swift and pdf_template.txt.
+In terminal compile the files using the command "swiftc file_formats.swift dictionary_list.swift main.swift"
 
-In the main.swift there are paths defined to the pdf_template and the output files.
+Then run the main file by typing the command "./main"
 
-Here while I ran this on my machine I used local path details. In order to run them on your machine just paste location of the pdf_template and your interest of output files location to the respective variables that store location of fies and run the main.swift in the terminal to see the application running.
+To extend the usability of the application just paste the respective function file of the format in "file_formats.swift". Make sure the function type is same as already predefined functions Ex: outputPDFFile
 
-In the main.swift I've defined two different output formats as functions. Inorder to add a new plugin we can get the template of the required plugin and write a function to give an output of the specified format
-
+Then just add the function and display type in the "dictionary_list.swift". There after just compile and run using the above commands you see the application running.
