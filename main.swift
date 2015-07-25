@@ -40,7 +40,6 @@ func outputToFile(data: [[String:String]], fileType: Int) {
 	}else {
 		for i in 0..<filesFormatsFunctionList.count {
 			if fileType == (i + 1) {
-				println("x")
 				filesFormatsFunctionList[i+1]!(data)
 			}
 		}

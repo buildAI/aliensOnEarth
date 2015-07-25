@@ -1,5 +1,7 @@
+var autoIncrementer1 = 0
 //dictionary to display the list of ways to export data
-var fileFormatsDisplayList = [0: "Don't export data", 1: "Text Format", 2: "PDF Format"]
+var fileFormatsDisplayList = [autoIncrementer1++: "Don't export data", autoIncrementer1++: "Text Format", autoIncrementer1++: "PDF Format"]
 //dictionary to store the different functions available for exporting data
 //never use 0 in this dictionary because 0 is to prevent export of data
-var filesFormatsFunctionList = [1: outputTextFile, 2: outputPDFFile]
+var autoIncrementer2 = 0
+var filesFormatsFunctionList = [++autoIncrementer2: outputTextFile, ++autoIncrementer2: outputPDFFile]
