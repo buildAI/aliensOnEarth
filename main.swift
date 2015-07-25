@@ -79,6 +79,16 @@ func outputTextFile(data: [[String: String]]) {
     //str.writeToFile(txtlocation, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
 }
 
+//function to call another function to export data to particular file format
+func outputToFile(data: [[String:String]], fileType: Int) {
+	if fileType == 1 {
+		outputTextFile(data)
+	} else if fileType == 2 {
+		outputPDFFile(data)
+	}
+	
+}
+
 func readData() -> [String: String] {
     var dict = [String: String]()
     println("Enter the code name:")
@@ -102,8 +112,6 @@ while (checkToContinue == "y" || checkToContinue == "Y") {
     println("Press y or Y to continue, press other key to exit")
     checkToContinue = input()
 }
-//println("Press 1 for text file and 2 for PDF")
-//var fileType = input().toInt()! //variable to store for the file type
-//println(userInput)
-//outputToFile(userInput,fileType)
-outputPDFFile(userInput)
+println("Press 1 for text file and 2 for PDF")
+var fileType = input().toInt()! //variable to store for the file type
+outputToFile(userInput,fileType)
